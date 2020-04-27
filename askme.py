@@ -36,7 +36,9 @@ def askme(keywords, items):
 
     # No results
     if not result:
-        click.echo(click.style("I didn't find anything with that keywords.", fg="yellow", bold=True))
+        click.echo(click.style(
+            "I didn't find anything with that keywords.", fg="yellow", bold=True)
+        )
 
     # Show the results
     else:

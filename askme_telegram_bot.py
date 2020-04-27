@@ -13,15 +13,18 @@ Press Ctrl-C on the command line to stop.
 """
 
 import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from search import Search
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
+# Telegram token
 TOKEN = "1281311316:AAHhWrf-X0IL5pBQ89CM6zXKJg45RX7F0lI"
 
 # Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +46,7 @@ def error(update, context):
 def search(update, context):
     """ Send the search result when the command /search is issued """
     if not context.args:
-        msg = "Sorry, I didn't find the keyworkds.\
+        msg = "Sorry, I didn't find the Keywords.\
             Just write me /search and some keywords. Example:\
             \n\n/search keyword1 keyword2"
         update.message.reply_text(msg)
@@ -56,7 +59,9 @@ def search(update, context):
 
         # No results
         if not result:
-            update.message.reply_text("I didn't find anything with that keywords.")
+            update.message.reply_text(
+                "I didn't find anything with that keywords."
+            )
 
         # Show the results
         else:
