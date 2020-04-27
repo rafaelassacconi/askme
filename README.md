@@ -89,8 +89,12 @@ pytest
 ```
 
 ## 3. Examples
+
 Command line interface:
+
 ![Console Example](https://github.com/rafaelassacconi/askme/blob/master/docs/example-console.png?raw=true)
 
+
 Telegram chatbot:
+
 ![Telegram Example](https://github.com/rafaelassacconi/askme/blob/master/docs/example-bot.png?raw=true)
