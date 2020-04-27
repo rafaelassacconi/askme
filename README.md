@@ -79,6 +79,7 @@ python askme_telegram_bot.py
 ```
 
 On Telegram, chat with the user `@askme_telegram_bot`.
+Press `Ctrl-C` on the command line to stop.
 
 
 ### 2.5 Tests

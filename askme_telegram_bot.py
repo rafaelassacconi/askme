@@ -28,11 +28,10 @@ logger = logging.getLogger(__name__)
 
 def echo(update, context):
     """ Echo the message to user """
-    msg = "Hi, my name is AskMe! I'm a bot that can search for you \
-        questions and answers on the internet. Let's start? \
-        \n\nTo start, just write me /search and some keywords. Example:\
+    msg = "Hi, my name is AskMe! I'm a bot that can search for you\
+        questions and answers on the internet. Let's start?\
+        \n\nWrite me /search and some keywords. Example:\
         \n\n/search keyword1 keyword2"
-         
     update.message.reply_text(msg)
 
 
@@ -44,8 +43,9 @@ def error(update, context):
 def search(update, context):
     """ Send the search result when the command /search is issued """
     if not context.args:
-        msg = "Sorry, I didn't find the keyworkds. Just write me /search and \
-            some keywords. Example: \n\n /search keyword1 keyword2"
+        msg = "Sorry, I didn't find the keyworkds.\
+            Just write me /search and some keywords. Example:\
+            \n\n/search keyword1 keyword2"
         update.message.reply_text(msg)
     else:
         update.message.reply_text("Searching...")
