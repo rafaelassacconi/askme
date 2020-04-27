@@ -1,5 +1,16 @@
+#!/usr/bin/python
+"""
+AskMe Python program can be used to search questions and answers
+on the internet.
+
+Usage:
+Run 'python askme.py' to start the program and inform the keywords.
+Run 'python askme.py --help' to get more information.
+Press Ctrl-C on the command line to stop.
+"""
+
 import click
-from stackoverflow.api import StackOverflow
+from search import Search
 
 
 @click.command()
@@ -20,19 +31,16 @@ def askme(keywords, items):
     """
     click.echo(click.style("Searching...", fg="yellow", bold=True))
 
-    keywords = keywords.replace(" ", ";")
+    # Call generic search
+    result = Search(keywords, items).by_keywords()
 
-    # Search on Stack Overflow
-    client = StackOverflow()
-    result = client.search_questions(tags=keywords, max=items)
-
-    # No resulsts
+    # No results
     if not result:
         click.echo(click.style("I didn't find anything with that keywords.", fg="yellow", bold=True))
 
     # Show the results
     else:
-        click.echo(click.style("This what I found to you:", fg="yellow", bold=True))
+        click.echo(click.style("Here's what I found to you:", fg="yellow", bold=True))
 
         for n, item in enumerate(result, 1):
             click.echo(click.style("Question %d: %s" % (n, item["title"]), bold=True))

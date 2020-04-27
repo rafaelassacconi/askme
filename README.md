@@ -46,13 +46,42 @@ Install the packages required:
 pip install -r requirements.txt
 ```
 
-### 2.3 Run
+### 2.3 Run the command line program
 Run the command bellow to execute the program:
 ```
 python askme.py
 ```
+For execute the program with all the parameters:
+```
+python askme.py --keywords=html --items=20
+```
+To get help, use the `--help` parameter:
+```
+python askme.py --help
+```
+Help command result:
+```console
+Usage: askme.py [OPTIONS]
 
-### 2.4 Tests
+  AskMe use keywords to search related questions  and answers on the
+  internet.
+
+Options:
+  --keywords TEXT  Keywords to search related questions and answers.
+  --items INTEGER  Max number of items that will be returned.
+  --help           Show this message and exit.
+```
+
+### 2.4 Run as a Telegram bot
+Run the command bellow to start bot:
+```
+python askme_telegram_bot.py
+```
+
+On Telegram, chat with the user `@askme_telegram_bot`.
+
+
+### 2.5 Tests
 For run the tests, install the `pytest` package and run the command bellow:
 ```
 pytest
