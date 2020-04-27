@@ -7,14 +7,14 @@ def test_askme_valid_keyword(runner):
     result = runner.invoke(askme, "--keywords=django")
   
     assert result.exit_code == 0
-    assert "This what I found to you" in result.output
+    assert "I found to you" in result.output
 
 def test_askme_multiples_keywords(runner):
     """ Run program with multiples valid keywords """
-    result = runner.invoke(askme, "--keywords=postgre;database")
+    result = runner.invoke(askme, "--keywords=python;html")
   
     assert result.exit_code == 0
-    assert "This what I found to you" in result.output
+    assert "I found to you" in result.output
 
 def test_askme_invalid_keyword(runner):
     """ Run program with invalid keyword """
