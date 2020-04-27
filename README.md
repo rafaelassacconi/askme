@@ -82,9 +82,15 @@ On Telegram, chat with the user `@askme_telegram_bot`.
 
 Press `Ctrl-C` on the command line to stop.
 
-
 ### 2.5 Tests
 For run the tests, install the `pytest` package and run the command bellow:
 ```
 pytest
 ```
+
+## 3. Examples
+Command line interface:
+![Console Example](https://github.com/rafaelassacconi/askme/blob/master/docs/example-console.png?raw=true)
+
+Telegram chatbot:
+![Telegram Example](https://github.com/rafaelassacconi/askme/blob/master/docs/example-bot.png?raw=true)
